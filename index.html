@@ -7,220 +7,139 @@
 
 <style>
 :root {
-    --bg: #f2f4f8;
-    --card: #ffffff;
-    --text: #2c2c2c;
-    --muted: #555;
-    --accent: #1f3c88;
+    --bg:#f2f4f8; --card:#fff; --text:#2c2c2c; --muted:#555; --accent:#1f3c88;
 }
-
 [data-theme="dark"] {
-    --bg: #0f172a;
-    --card: #111827;
-    --text: #e5e7eb;
-    --muted: #9ca3af;
-    --accent: #60a5fa;
+    --bg:#0f172a; --card:#111827; --text:#e5e7eb; --muted:#9ca3af; --accent:#60a5fa;
 }
 
-* {
-    box-sizing: border-box;
+*{box-sizing:border-box}
+body{
+    margin:0;font-family:"Segoe UI",Arial,sans-serif;
+    background:var(--bg);color:var(--text);
+    padding:20px;transition:.3s;
+}
+.cv{
+    max-width:960px;margin:auto;background:var(--card);
+    padding:30px;border-radius:14px;
+    box-shadow:0 15px 35px rgba(0,0,0,.1);
+    animation:fadeIn .8s ease;
+}
+@keyframes fadeIn{
+    from{opacity:0;transform:translateY(20px)}
+    to{opacity:1;transform:translateY(0)}
 }
 
-body {
-    margin: 0;
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    padding: 20px;
-    transition: background 0.3s, color 0.3s;
+header{display:flex;flex-direction:column;gap:10px}
+h1{margin:0;font-size:clamp(26px,5vw,36px);color:var(--accent)}
+h2{
+    margin-top:40px;border-bottom:2px solid var(--accent);
+    padding-bottom:6px;font-size:20px;
 }
 
-.cv-container {
-    max-width: 960px;
-    margin: auto;
-    background: var(--card);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    transition: background 0.3s;
-}
+.subtitle{font-size:18px;font-weight:600}
+.contact{font-size:14px;color:var(--muted)}
 
-header {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+button,a.btn{
+    background:var(--accent);color:#fff;border:none;
+    padding:8px 14px;border-radius:20px;
+    cursor:pointer;font-size:13px;
+    text-decoration:none;transition:.3s;
 }
+button:hover,a.btn:hover{opacity:.85}
 
-h1 {
-    margin: 0;
-    font-size: clamp(26px, 5vw, 36px);
-    color: var(--accent);
-}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.job{margin-top:20px;animation:fadeIn .6s ease}
+.job span{font-size:13px;color:var(--muted)}
 
-.subtitle {
-    font-size: clamp(16px, 4vw, 18px);
-    font-weight: 600;
-}
+footer{text-align:center;margin-top:40px;font-size:12px;color:var(--muted)}
 
-.contact {
-    font-size: 14px;
-    color: var(--muted);
-}
-
-.toggle {
-    margin-top: 10px;
-    align-self: flex-start;
-    background: var(--accent);
-    color: white;
-    border: none;
-    padding: 8px 14px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 13px;
-}
-
-h2 {
-    margin-top: 35px;
-    border-bottom: 2px solid var(--accent);
-    padding-bottom: 5px;
-    font-size: 20px;
-}
-
-p {
-    line-height: 1.6;
-}
-
-.job {
-    margin-top: 20px;
-}
-
-.job span {
-    font-size: 13px;
-    color: var(--muted);
-}
-
-ul {
-    padding-left: 18px;
-}
-
-li {
-    margin-bottom: 6px;
-}
-
-.skills {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 15px;
-}
-
-footer {
-    margin-top: 40px;
-    text-align: center;
-    font-size: 12px;
-    color: var(--muted);
-}
-
-/* 📱 Ajustes móviles */
-@media (max-width: 600px) {
-    .cv-container {
-        padding: 20px;
-    }
+@media(max-width:600px){
+    .cv{padding:20px}
 }
 </style>
 </head>
 
 <body>
+<div class="cv">
+<header>
+<h1>Marco Antonio Montenegro Zúñiga</h1>
+<div class="subtitle">Ingeniero en Sistemas Computacionales | Técnico en Mecatrónica</div>
+<div class="contact">
+📍 Celaya, Gto · 📧 markitocecyteg@gmail.com · 📱 221 187 6526
+</div>
 
-<div class="cv-container">
-    <header>
-        <h1>Marco Antonio Montenegro Zúñiga</h1>
-        <div class="subtitle">Ingeniero en Sistemas Computacionales | Técnico en Mecatrónica</div>
-        <div class="contact">
-            📍 Celaya, Guanajuato, México<br>
-            📧 markitocecyteg@gmail.com | 📱 221 187 6526
-        </div>
-        <button class="toggle" onclick="toggleTheme()">🌙 / ☀️ Cambiar modo</button>
-    </header>
+<div class="buttons">
+<button onclick="toggleTheme()">🌙 / ☀️ Modo</button>
+<a href="Marco_Montenegro_CV.pdf" class="btn" download>⬇ Descargar PDF</a>
+</div>
+</header>
 
-    <h2>Perfil Profesional</h2>
-    <p>
-        Ingeniero en Sistemas Computacionales con experiencia en análisis de datos,
-        automatización y mejora de procesos industriales. Participación en proyectos
-        de digitalización, control de calidad y visualización de información para
-        toma de decisiones en planta.
-    </p>
+<h2>Perfil Profesional</h2>
+<p>
+Ingeniero con experiencia en análisis de datos, automatización y mejora de procesos
+industriales. Participación en digitalización de información, control de calidad
+y visualización para toma de decisiones en planta.
+</p>
 
-    <h2>Habilidades Clave</h2>
-    <div class="skills">
-        <ul>
-            <li>Power BI y análisis de datos</li>
-            <li>Excel avanzado y macros</li>
-            <li>SQL Server y MySQL</li>
-            <li>Python, Java, JavaScript</li>
-        </ul>
-        <ul>
-            <li>Lean Manufacturing, 5S, 8D</li>
-            <li>ISO 9001, 14001, 45001 (en formación)</li>
-            <li>Control de calidad y vernier</li>
-            <li>Documentación técnica</li>
-        </ul>
-    </div>
+<h2>Habilidades Clave</h2>
+<div class="skills">
+<ul>
+<li>Power BI y análisis de datos</li>
+<li>Excel avanzado y macros</li>
+<li>SQL Server y MySQL</li>
+<li>Python, Java, JavaScript</li>
+</ul>
+<ul>
+<li>Lean Manufacturing, 5S, 8D</li>
+<li>ISO 9001, 14001, 45001 (en formación)</li>
+<li>Control de calidad y vernier</li>
+<li>Documentación técnica</li>
+</ul>
+</div>
 
-    <h2>Experiencia Profesional</h2>
+<h2>Experiencia Profesional</h2>
+<div class="job">
+<strong>Intern OEX – Clarios</strong><br>
+<span>2025</span>
+<ul>
+<li>Digitalización de Cartas ABE.</li>
+<li>Gestión de datos en SharePoint.</li>
+<li>Capacitación a personal operativo.</li>
+</ul>
+</div>
 
-    <div class="job">
-        <strong>Intern OEX – Clarios</strong><br>
-        <span>Enero 2025 – Diciembre 2025</span>
-        <ul>
-            <li>Digitalización de Cartas ABE para equipos industriales.</li>
-            <li>Gestión de datos y plataformas en SharePoint.</li>
-            <li>Capacitación a personal operativo.</li>
-        </ul>
-    </div>
+<div class="job">
+<strong>Residente Profesional – Clarios</strong><br>
+<span>2024</span>
+<ul>
+<li>Dashboards en Power BI.</li>
+<li>Automatización de reportes.</li>
+<li>Auditoría en sistema MES.</li>
+</ul>
+</div>
 
-    <div class="job">
-        <strong>Residente Profesional – Clarios</strong><br>
-        <span>Septiembre 2024 – Diciembre 2024</span>
-        <ul>
-            <li>Dashboards en Power BI con datos de producción.</li>
-            <li>Automatización de reportes en Excel.</li>
-            <li>Auditoría de procesos en MES.</li>
-        </ul>
-    </div>
+<h2>Educación</h2>
+<ul>
+<li>Ingeniería en Sistemas Computacionales – IT Celaya</li>
+<li>Técnico en Mecatrónica – CECyTEG</li>
+</ul>
 
-    <h2>Educación</h2>
-    <ul>
-        <li>Ingeniería en Sistemas Computacionales – IT Celaya</li>
-        <li>Técnico en Mecatrónica – CECyTEG</li>
-    </ul>
-
-    <h2>Idiomas</h2>
-    <ul>
-        <li>Español: Nativo</li>
-        <li>Inglés: Intermedio</li>
-    </ul>
-
-    <footer>
-        CV web • Última actualización 2026
-    </footer>
+<footer>
+CV Web Profesional · 2026
+</footer>
 </div>
 
 <script>
-function toggleTheme() {
-    const html = document.documentElement;
-    const current = html.getAttribute("data-theme");
-    const next = current === "dark" ? "light" : "dark";
-    html.setAttribute("data-theme", next);
-    localStorage.setItem("theme", next);
+function toggleTheme(){
+const html=document.documentElement;
+const t=html.getAttribute("data-theme")==="dark"?"light":"dark";
+html.setAttribute("data-theme",t);
+localStorage.setItem("theme",t);
 }
-
-(function () {
-    const saved = localStorage.getItem("theme");
-    if (saved) {
-        document.documentElement.setAttribute("data-theme", saved);
-    }
-})();
+(()=>{const s=localStorage.getItem("theme");
+if(s)document.documentElement.setAttribute("data-theme",s);})();
 </script>
-
 </body>
 </html>
