@@ -6,140 +6,258 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-:root {
-    --bg:#f2f4f8; --card:#fff; --text:#2c2c2c; --muted:#555; --accent:#1f3c88;
+:root{
+  --bg:#f2f4f8;
+  --card:#ffffff;
+  --text:#2c2c2c;
+  --muted:#555;
+  --accent:#1f3c88;
 }
-[data-theme="dark"] {
-    --bg:#0f172a; --card:#111827; --text:#e5e7eb; --muted:#9ca3af; --accent:#60a5fa;
+[data-theme="dark"]{
+  --bg:#0f172a;
+  --card:#111827;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --accent:#60a5fa;
 }
 
 *{box-sizing:border-box}
+
 body{
-    margin:0;font-family:"Segoe UI",Arial,sans-serif;
-    background:var(--bg);color:var(--text);
-    padding:20px;transition:.3s;
+  margin:0;
+  font-family:"Segoe UI",Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  padding:20px;
+  transition:.3s;
 }
-.cv{
-    max-width:960px;margin:auto;background:var(--card);
-    padding:30px;border-radius:14px;
-    box-shadow:0 15px 35px rgba(0,0,0,.1);
-    animation:fadeIn .8s ease;
+
+.cv-container{
+  max-width:960px;
+  margin:auto;
+  background:var(--card);
+  padding:30px;
+  border-radius:14px;
+  box-shadow:0 15px 35px rgba(0,0,0,.1);
+  animation:fadeIn .8s ease;
 }
+
 @keyframes fadeIn{
-    from{opacity:0;transform:translateY(20px)}
-    to{opacity:1;transform:translateY(0)}
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
 }
 
-header{display:flex;flex-direction:column;gap:10px}
-h1{margin:0;font-size:clamp(26px,5vw,36px);color:var(--accent)}
-h2{
-    margin-top:40px;border-bottom:2px solid var(--accent);
-    padding-bottom:6px;font-size:20px;
+header{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
 }
 
-.subtitle{font-size:18px;font-weight:600}
-.contact{font-size:14px;color:var(--muted)}
+h1{
+  margin:0;
+  font-size:clamp(26px,5vw,36px);
+  color:var(--accent);
+}
 
-.buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.subtitle{
+  font-size:18px;
+  font-weight:600;
+}
+
+.contact{
+  font-size:14px;
+  color:var(--muted);
+}
+
+.actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+
 button,a.btn{
-    background:var(--accent);color:#fff;border:none;
-    padding:8px 14px;border-radius:20px;
-    cursor:pointer;font-size:13px;
-    text-decoration:none;transition:.3s;
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  padding:8px 14px;
+  border-radius:20px;
+  cursor:pointer;
+  font-size:13px;
+  text-decoration:none;
+  transition:.3s;
 }
+
 button:hover,a.btn:hover{opacity:.85}
 
-.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
-.job{margin-top:20px;animation:fadeIn .6s ease}
-.job span{font-size:13px;color:var(--muted)}
+h2{
+  margin-top:40px;
+  border-bottom:2px solid var(--accent);
+  padding-bottom:6px;
+  font-size:20px;
+}
 
-footer{text-align:center;margin-top:40px;font-size:12px;color:var(--muted)}
+p{line-height:1.6}
+
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+}
+
+.job{
+  margin-top:20px;
+  animation:fadeIn .6s ease;
+}
+
+.job span{
+  font-size:13px;
+  color:var(--muted);
+}
+
+ul{padding-left:18px}
+li{margin-bottom:6px}
+
+.footer{
+  margin-top:40px;
+  text-align:center;
+  font-size:12px;
+  color:var(--muted);
+}
 
 @media(max-width:600px){
-    .cv{padding:20px}
+  .cv-container{padding:20px}
 }
 </style>
 </head>
 
 <body>
-<div class="cv">
-<header>
-<h1>Marco Antonio Montenegro Zúñiga</h1>
-<div class="subtitle">Ingeniero en Sistemas Computacionales | Técnico en Mecatrónica</div>
-<div class="contact">
-📍 Celaya, Gto · 📧 markitocecyteg@gmail.com · 📱 221 187 6526
-</div>
 
-<div class="buttons">
-<button onclick="toggleTheme()">🌙 / ☀️ Modo</button>
-<a href="Marco_Montenegro_CV.pdf" class="btn" download>⬇ Descargar PDF</a>
-</div>
+<div class="cv-container">
+
+<header>
+  <h1>Marco Antonio Montenegro Zúñiga</h1>
+  <div class="subtitle">Ingeniero en Sistemas Computacionales | Técnico en Mecatrónica</div>
+  <div class="contact">
+    📍 Celaya, Guanajuato, México <br>
+    📧 markitocecyteg@gmail.com | 📱 221 187 6526
+  </div>
+
+  <div class="actions">
+    <button onclick="toggleTheme()">🌙 / ☀️ Modo</button>
+    <a href="Marco_Montenegro_CV.pdf" class="btn" download>⬇ Descargar PDF</a>
+  </div>
 </header>
 
 <h2>Perfil Profesional</h2>
 <p>
-Ingeniero con experiencia en análisis de datos, automatización y mejora de procesos
-industriales. Participación en digitalización de información, control de calidad
-y visualización para toma de decisiones en planta.
+Ingeniero en Sistemas Computacionales con experiencia en análisis de datos,
+automatización y mejora de procesos industriales. He participado en proyectos
+de digitalización, control de calidad y visualización de información para la toma
+de decisiones en planta. Perfil orientado a resultados, con alta adaptabilidad y
+aprendizaje continuo.
 </p>
 
 <h2>Habilidades Clave</h2>
-<div class="skills">
-<ul>
-<li>Power BI y análisis de datos</li>
-<li>Excel avanzado y macros</li>
-<li>SQL Server y MySQL</li>
-<li>Python, Java, JavaScript</li>
-</ul>
-<ul>
-<li>Lean Manufacturing, 5S, 8D</li>
-<li>ISO 9001, 14001, 45001 (en formación)</li>
-<li>Control de calidad y vernier</li>
-<li>Documentación técnica</li>
-</ul>
+<div class="skills-grid">
+  <ul>
+    <li>Análisis de datos y visualización (Power BI)</li>
+    <li>Excel avanzado y automatización</li>
+    <li>SQL Server y MySQL</li>
+    <li>Python, Java, PHP, JavaScript</li>
+  </ul>
+  <ul>
+    <li>Lean Manufacturing, 5S, 5 Why’s, 8D</li>
+    <li>Normas ISO 9001, 14001, 45001 (en formación)</li>
+    <li>Control y aseguramiento de calidad</li>
+    <li>Documentación técnica y evidencia</li>
+  </ul>
 </div>
 
 <h2>Experiencia Profesional</h2>
+
 <div class="job">
-<strong>Intern OEX – Clarios</strong><br>
-<span>2025</span>
-<ul>
-<li>Digitalización de Cartas ABE.</li>
-<li>Gestión de datos en SharePoint.</li>
-<li>Capacitación a personal operativo.</li>
-</ul>
+  <h3>Intern OEX – Clarios</h3>
+  <span>Celaya, Guanajuato | Enero 2025 – Diciembre 2025</span>
+  <ul>
+    <li>Lideré el proyecto de digitalización de Cartas ABE para equipos industriales.</li>
+    <li>Desarrollo y gestión de plataformas digitales en SharePoint.</li>
+    <li>Captura, análisis y actualización de datos operativos.</li>
+    <li>Documentación de incidencias técnicas y soporte a certificaciones.</li>
+    <li>Capacitación a personal operativo y administrativo.</li>
+    <li>Trabajo colaborativo con mantenimiento, calidad y producción.</li>
+  </ul>
 </div>
 
 <div class="job">
-<strong>Residente Profesional – Clarios</strong><br>
-<span>2024</span>
-<ul>
-<li>Dashboards en Power BI.</li>
-<li>Automatización de reportes.</li>
-<li>Auditoría en sistema MES.</li>
-</ul>
+  <h3>Residente Profesional – Clarios</h3>
+  <span>Celaya, Guanajuato | Septiembre 2024 – Diciembre 2024</span>
+  <ul>
+    <li>Análisis de datos de producción hora por hora.</li>
+    <li>Creación de dashboards dinámicos en Power BI.</li>
+    <li>Automatización de reportes mediante Excel y macros.</li>
+    <li>Consultas y modelado de datos en SQL Server.</li>
+    <li>Auditoría de procesos en sistema MES.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <h3>Operador de Producción – ARSO Engineering</h3>
+  <span>Celaya, Guanajuato | Enero 2024 – Abril 2024</span>
+  <ul>
+    <li>Operación y mantenimiento básico de torno.</li>
+    <li>Medición de piezas con vernier y control OK/NOK.</li>
+    <li>Retrabajo de piezas fuera de especificación.</li>
+    <li>Trabajo orientado a metas de producción.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <h3>Desarrollador de Proyectos – Instituto Tecnológico de Celaya</h3>
+  <span>2019 – 2024</span>
+  <ul>
+    <li>Desarrollo de aplicación para gestión de consultorio médico.</li>
+    <li>Proyecto de domótica: casa inteligente.</li>
+    <li>Prácticas en redes, IoT, ciberseguridad e Industria 4.0.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <h3>Practicante de Mantenimiento – Fujikura Automotive MX</h3>
+  <span>Salamanca, Guanajuato | 2019</span>
+  <ul>
+    <li>Mantenimiento preventivo y correctivo en sistemas neumáticos y eléctricos.</li>
+  </ul>
 </div>
 
 <h2>Educación</h2>
 <ul>
-<li>Ingeniería en Sistemas Computacionales – IT Celaya</li>
-<li>Técnico en Mecatrónica – CECyTEG</li>
+  <li><strong>Ingeniería en Sistemas Computacionales</strong> – Instituto Tecnológico de Celaya (2019 – 2024)</li>
+  <li><strong>Técnico en Mecatrónica</strong> – CECyTEG Salamanca (2016 – 2019)</li>
 </ul>
 
-<footer>
-CV Web Profesional · 2026
-</footer>
+<h2>Idiomas</h2>
+<ul>
+  <li>Español: Nativo</li>
+  <li>Inglés: Intermedio</li>
+</ul>
+
+<div class="footer">
+  CV disponible en versión web • Última actualización 2026
+</div>
+
 </div>
 
 <script>
 function toggleTheme(){
-const html=document.documentElement;
-const t=html.getAttribute("data-theme")==="dark"?"light":"dark";
-html.setAttribute("data-theme",t);
-localStorage.setItem("theme",t);
+  const html=document.documentElement;
+  const next=html.getAttribute("data-theme")==="dark"?"light":"dark";
+  html.setAttribute("data-theme",next);
+  localStorage.setItem("theme",next);
 }
 (()=>{const s=localStorage.getItem("theme");
 if(s)document.documentElement.setAttribute("data-theme",s);})();
 </script>
+
 </body>
 </html>
